@@ -1,0 +1,791 @@
+/* ==========================================================================
+   Dealt in Darkness - site styles
+   Sections: 1 Fonts and variables · 2 Base · 3 Layout · 4 Typography · 5 Buttons
+             6 Home page · 7 Panels and grids · 8 FAQ and forms
+             9 Icons · 10 Screenshot slideshow · 11 Team page and pop-up
+             12 Responsive and reduced motion
+   ========================================================================== */
+
+
+/* 1. Fonts and variables
+   -------------------------------------------------------------------------- */
+
+/* Body font, Crimson Pro, is hosted on this site (see the fonts folder).
+   Being local, it loads with the page, so text no longer visibly swaps fonts on refresh.
+   The heading font, IM Fell English SC, is still loaded from Google Fonts in each page's <head>. */
+@font-face {
+  font-family: "Crimson Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("fonts/crimson-pro-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Crimson Pro";
+  font-style: italic;
+  font-weight: 400;
+  font-display: block;
+  src: url("fonts/crimson-pro-italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Crimson Pro";
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: block;
+  src: url("fonts/crimson-pro-bold.woff") format("woff");
+}
+
+/* Numbers in headings, buttons and the quick-facts strip.
+   IM Fell English SC has old-style numerals (some rise above or drop below the line, so
+   "1 - 4" looks uneven). This face is used for the digits 0-9 only, so every number is
+   drawn with Crimson Pro's even, lining numerals while letters still use IM Fell.
+   If the numbers look too big or small next to the letters, adjust size-adjust. */
+@font-face {
+  font-family: "Display Digits";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  size-adjust: 100%;
+  src: url("fonts/crimson-pro-regular.woff") format("woff");
+  unicode-range: U+0030-0039;
+}
+
+:root {
+  /* Colours taken from the card art */
+  --paper: #c4ae8b;
+  --paper-lt: #d3c1a0;
+  --paper-dk: #b39b76;
+  --ink: #17130e;
+  --muted: #3f3829;
+  --umber: #6f6552;
+
+  /* Font stacks */
+  --display: "Display Digits", "IM Fell English SC", Georgia, serif;
+  --body: "Crimson Pro", Georgia, serif;
+}
+
+
+/* 2. Base
+   -------------------------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  background-image:
+    url("images/paper-noise.svg"),
+    radial-gradient(ellipse at 50% 0, var(--paper-lt), transparent 70%);
+  color: var(--ink);
+  font: 1.2rem/1.65 var(--body);
+  font-variant-numeric: lining-nums;
+}
+
+a {
+  color: var(--ink);
+  text-decoration-color: var(--umber);
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: var(--umber);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+
+/* 3. Layout: wrapper, header, navigation, footer
+   -------------------------------------------------------------------------- */
+
+.wrap {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.wrap.narrow {
+  max-width: 40rem;
+}
+
+header,
+footer {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+header :focus-visible,
+footer :focus-visible {
+  outline-color: var(--paper);
+}
+
+header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.logo {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--paper);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+nav a {
+  color: var(--paper-dk);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a[aria-current] {
+  color: var(--paper-lt);
+  text-decoration: underline;
+  text-decoration-color: var(--umber);
+  text-underline-offset: 6px;
+}
+
+footer {
+  margin-top: 5rem;
+  padding: 2rem 0;
+  color: var(--paper-dk);
+  font-size: 1rem;
+}
+
+footer a {
+  color: var(--paper);
+}
+
+footer a:hover {
+  color: var(--paper-lt);
+}
+
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+}
+
+
+/* 4. Typography
+   -------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3rem, 10vw, 6.5rem);
+}
+
+h2 {
+  margin: 3rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--ink);
+  font-size: 2.2rem;
+}
+
+h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.4rem;
+}
+
+/* Smaller h1 used at the top of The Game, The Team and Contact */
+.page-title {
+  margin-top: 3rem;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+}
+
+
+/* 5. Buttons
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  margin: 0 0.6rem 0.6rem 0;
+  padding: 0.7rem 1.4rem;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 1.15rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn:hover {
+  border-color: var(--umber);
+  background: var(--umber);
+  color: var(--paper-lt);
+}
+
+
+/* 6. Home page
+   -------------------------------------------------------------------------- */
+
+/* Hero: title and buttons on the left, fanned cards on the right */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem 0 3rem;
+}
+
+.hero p.tag {
+  max-width: 30rem;
+  margin: 1rem 0 2rem;
+  color: var(--muted);
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+/* The fan of cards. Each card sets its own --r (rotation) and --x (offset) in the HTML. */
+.hand {
+  --fan-scale: 1; /* shrunk on small phones, see section 12 */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: calc(21rem * var(--fan-scale));
+}
+
+.card {
+  position: absolute;
+  top: calc(2rem * var(--fan-scale));
+  width: calc(11rem * var(--fan-scale));
+  height: auto;
+  transform: rotate(var(--r)) translateX(calc(var(--x) * var(--fan-scale)));
+  transform-origin: 50% 120%;
+  filter: drop-shadow(0.2rem 0.5rem 0.6rem rgba(23, 19, 14, 0.55));
+  transition: translate 0.25s;
+}
+
+.card:hover {
+  translate: 0 -0.8rem;
+}
+
+/* Quick facts strip (Genre, Category, Players, Status) */
+.meta {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+  border-block: 2px solid var(--ink);
+}
+
+.meta dl {
+  display: contents;
+}
+
+.meta dt {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.meta dd {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.6rem;
+  white-space: nowrap;
+}
+
+/* Large link tiles: The Game, The Team, Contact */
+.big {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.6rem;
+  margin: 1.5rem 0 0;
+}
+
+.bigbtn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 12rem;
+  padding: 1.6rem;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  box-shadow: 6px 6px 0 var(--umber);
+  color: var(--paper);
+  text-decoration: none;
+  transition: translate 0.15s, box-shadow 0.15s;
+}
+
+.bigbtn strong {
+  font-family: var(--display);
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.bigbtn span {
+  color: var(--paper-dk);
+  font-size: 1.1rem;
+}
+
+.bigbtn::after {
+  content: "\2192"; /* right arrow */
+  margin-top: auto;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.bigbtn:hover {
+  background: #2a241b;
+  box-shadow: 8px 8px 0 var(--umber);
+  color: var(--paper-lt);
+  translate: -2px -2px;
+}
+
+
+/* 7. Panels and grids
+   -------------------------------------------------------------------------- */
+
+.panel {
+  margin: 1.2rem 5px 1.4rem 0;
+  padding: 1.5rem;
+  border: 2px solid var(--ink);
+  background: var(--paper-lt);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.4rem;
+}
+
+.grid .panel {
+  margin: 0 5px 5px 0;
+}
+
+
+/* 8. FAQ and forms
+   -------------------------------------------------------------------------- */
+
+details {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--umber);
+}
+
+summary {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  color: var(--muted);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 2px solid var(--ink);
+  background: var(--paper-lt);
+  color: var(--ink);
+  font: inherit;
+}
+
+/* Spam trap field in the contact form: people never see it, bots fill it in */
+.hidden-field {
+  display: none;
+}
+
+
+/* 9. Icons (itch.io, Discord, LinkedIn)
+   -------------------------------------------------------------------------- */
+
+/* The shapes are defined once per page in a hidden sprite; keep it out of the layout */
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  color: var(--paper-dk);
+}
+
+.icon:hover {
+  color: var(--paper-lt);
+}
+
+.icon svg {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+footer .icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+
+/* 10. Screenshot slideshow (The Game page)
+   -------------------------------------------------------------------------- */
+
+.slideshow {
+  margin: 1.5rem 5px 1.5rem 0;
+}
+
+.slide {
+  margin: 0;
+}
+
+/* Without JavaScript the screenshots are simply stacked */
+.slide + .slide {
+  margin-top: 1.5rem;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto; /* overrides the height attribute so the 16:9 ratio is kept */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.slide figcaption {
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.slideshow-controls {
+  display: none; /* only shown once slideshow.js has switched the slideshow on */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.slideshow.is-active .slideshow-controls {
+  display: flex;
+}
+
+.slideshow-controls .btn {
+  margin: 0;
+  padding: 0.3rem 0.9rem;
+}
+
+.slideshow-count {
+  min-width: 3.5rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.dots {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.dot {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dot:hover {
+  background: var(--umber);
+}
+
+.dot[aria-current="true"] {
+  background: var(--ink);
+}
+
+
+/* 11. Team page and work-gallery pop-up
+   -------------------------------------------------------------------------- */
+
+.people {
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Compact card: small avatar beside the name and role, then the button */
+.person-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.person h3 {
+  margin: 0;
+}
+
+.person .btn {
+  margin: auto 0 0;
+}
+
+.role {
+  margin: 0.1rem 0 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper-dk);
+  font-family: var(--display);
+  font-size: 1.25rem;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* A person's name is a button that opens their pop-up, but should look like a link */
+.namebtn {
+  all: unset;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--umber);
+  text-underline-offset: 6px;
+  cursor: pointer;
+}
+
+.namebtn:hover {
+  color: var(--umber);
+}
+
+.namebtn:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* Pop-up */
+dialog {
+  width: min(56rem, 94vw);
+  max-height: 92vh;
+  margin: auto;
+  padding: 1.5rem;
+  overflow: auto;
+  border: 3px solid var(--ink);
+  background: var(--paper-lt);
+  color: var(--ink);
+}
+
+dialog::backdrop {
+  background: rgba(23, 19, 14, 0.85);
+}
+
+.dhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+}
+
+.dhead h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Bio and Contributions sections in the pop-up */
+dialog h3 {
+  margin: 1.2rem 0 0.3rem;
+}
+
+dialog #d-bio {
+  margin: 0;
+}
+
+.contributions {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.contributions li + li {
+  margin-top: 0.3rem;
+}
+
+#d-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Gallery inside the pop-up: main picture or video, caption bar, thumbnails */
+#stage {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  border: 2px solid var(--ink);
+  background: #000;
+}
+
+#stage img,
+#stage video,
+#stage iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: contain;
+}
+
+.gnav {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.6rem 0;
+}
+
+.gnav .btn {
+  margin: 0;
+  padding: 0.3rem 0.9rem;
+}
+
+#cap {
+  flex: 1;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+#thumbs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.3rem 0.3rem 0.6rem;
+  overflow-x: auto;
+}
+
+#thumbs button {
+  flex: 0 0 5.5rem;
+  display: grid;
+  place-items: center;
+  height: 3.4rem;
+  padding: 0;
+  border: 2px solid var(--umber);
+  background: #000;
+  color: var(--paper);
+  cursor: pointer;
+}
+
+#thumbs button[aria-current="true"] {
+  border-color: var(--ink);
+  outline: 2px solid var(--ink);
+}
+
+#thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* 12. Responsive and reduced motion
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small phones: shrink the fan of cards so the page never scrolls sideways */
+@media (max-width: 520px) {
+  .hand {
+    --fan-scale: 0.62;
+  }
+}
+
+@media (max-width: 340px) {
+  .hand {
+    --fan-scale: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

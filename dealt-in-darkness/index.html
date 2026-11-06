@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dealt in Darkness</title>
+    <meta
+      name="description"
+      content="Dealt in Darkness is a horror board and card game for 1 to 4 players.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="fonts/crimson-pro-regular.woff" as="font" type="font/woff" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&amp;display=block"
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body>
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-itch" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M5 2h14l3 5c0 1.6-1.1 2.6-2.5 2.6-1.5 0-2.5-1-2.5-2.2 0 1.2-1.1 2.2-2.5 2.2h-1c-1.4 0-2.5-1-2.5-2.2 0 1.2-1 2.2-2.5 2.2S5.5 8.4 5.5 7.4c0 1.2-1 2.2-2.5 2.2S2 8.6 2 7zM4.5 11.5h15V21h-15zM9 14.5l3 2.5 3-2.5v-1.2h-6z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <symbol id="icon-discord" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"
+        />
+      </symbol>
+      <symbol id="icon-linkedin" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+        />
+      </symbol>
+    </svg>
+    <header>
+      <div class="wrap">
+        <a class="logo" href="index.html">Dealt in Darkness</a>
+        <nav>
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="game.html">The Game</a>
+          <a href="team.html">The Team</a>
+          <a href="contact.html">Contact</a>
+          <a
+            class="icon"
+            href="https://dedelon.itch.io/dealt-in-darkness"
+            aria-label="Dealt in Darkness on itch.io (opens in a new tab)"
+            title="itch.io"
+            target="_blank"
+            rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#icon-itch"/></svg>
+          </a>
+          <a
+            class="icon"
+            href="https://discord.gg/Y9BTaTe4Sq"
+            aria-label="Join the Discord server (opens in a new tab)"
+            title="Discord"
+            target="_blank"
+            rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#icon-discord"/></svg>
+          </a>
+          <a
+            class="icon"
+            href="https://www.linkedin.com/company/dedelon-games/home/"
+            aria-label="Dedelon Games on LinkedIn (opens in a new tab)"
+            title="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#icon-linkedin"/></svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <section class="hero">
+          <div>
+            <h1>Dealt in Darkness</h1>
+            <p class="tag">Take your seat.</p>
+            <a
+              class="btn primary"
+              href="https://dedelon.itch.io/dealt-in-darkness"
+              target="_blank"
+              rel="noopener noreferrer">Play the playtest on itch.io</a>
+            <a
+              class="btn"
+              href="https://discord.gg/Y9BTaTe4Sq"
+              target="_blank"
+              rel="noopener noreferrer">Join the Discord</a>
+            <p class="note">A tabletop horror game for 1-4 players.</p>
+          </div>
+          <div class="hand" role="group" aria-label="Four cards from the Gumbo deck">
+            <img
+              class="card"
+              style="--r:-15deg;--x:-6.6rem"
+              src="images/cards/gumbo-2.png"
+              alt="Two of Gumbo: salt and pepper shakers">
+            <img
+              class="card"
+              style="--r:-5deg;--x:-2.2rem"
+              src="images/cards/gumbo-j.png"
+              alt="Jack of Gumbo: an eyeball">
+            <img
+              class="card"
+              style="--r:5deg;--x:2.2rem"
+              src="images/cards/gumbo-8.png"
+              alt="Eight of Gumbo: an onion">
+            <img
+              class="card"
+              style="--r:15deg;--x:6.6rem"
+              src="images/cards/gumbo-k.png"
+              alt="King of Gumbo: a severed hand">
+          </div>
+        </section>
+        <div class="meta">
+          <dl>
+            <div>
+              <dt>Category</dt>
+              <dd>Tabletop Horror Game</dd>
+            </div>
+            <div>
+              <dt>Players</dt>
+              <dd>1 to 4</dd>
+            </div>
+            <div>
+              <dt>Platform</dt>
+              <dd>PC</dd>
+            </div>
+            <div>
+              <dt>Release Date</dt>
+              <dd>Early 2027</dd>
+            </div>
+          </dl>
+        </div>
+        <h2>Have a peek behind the curtain</h2>
+        <div class="big">
+          <a class="bigbtn" href="game.html">
+            <strong>The Game</strong>
+            <span>Four games await. Learn what must be done to survive.</span>
+          </a>
+          <a class="bigbtn" href="team.html">
+            <strong>The Team</strong>
+            <span>Meet the dealers. See the work of those pulling the strings.</span>
+          </a>
+          <a class="bigbtn" href="contact.html">
+            <strong>Contact</strong>
+            <span>Questions, bugs, or looking for a seat at the table?</span>
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="wrap">
+        <span>
+          <a href="contact.html">Contact</a>
+          <a
+            class="icon"
+            href="https://dedelon.itch.io/dealt-in-darkness"
+            aria-label="Dealt in Darkness on itch.io (opens in a new tab)"
+            title="itch.io"
+            target="_blank"
+            rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#icon-itch"/></svg>
+          </a>
+          <a
+            class="icon"
+            href="https://discord.gg/Y9BTaTe4Sq"
+            aria-label="Join the Discord server (opens in a new tab)"
+            title="Discord"
+            target="_blank"
+            rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#icon-discord"/></svg>
+          </a>
+          <a
+            class="icon"
+            href="https://www.linkedin.com/company/dedelon-games/home/"
+            aria-label="Dedelon Games on LinkedIn (opens in a new tab)"
+            title="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#icon-linkedin"/></svg>
+          </a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>
