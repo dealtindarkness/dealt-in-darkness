@@ -75,12 +75,19 @@ const TEAM = [
         gallery: [],
       },
       {
-        name: "Isaac",
+        name: "Isaac Craig",
         role: "Gameplay Programmer",
         photo: "",
-        short: "Coming Soon",
-        bio: "Coming Soon",
-        links: [],
+        short: [
+          "Created and refined the majority of in-game items.",
+          "Implemented spectator mode so friends can watch when a lobby is full.",
+          "Contributed extensively to Flashfire’s development and rework.",
+          "Added physics based player interactions, including shoving and dragging.",
+        ],
+        links: [
+          { label: "LinkedIn", url: "https://www.linkedin.com/in/isaac-c-craig/" },
+          { label: "Portfolio", url: "https://isaaccraig.com/" },
+        ],
         gallery: [],
       },
     ],
