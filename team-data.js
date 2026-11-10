@@ -113,7 +113,12 @@ const TEAM = [
         name: "Abigail Weeden",
         role: "3D Prop Artist",
         photo: "",
-        short: "Through the development of the game, I contributed by creating various 3D assets and props. This included assets for the \"Flypt\" game board, the Skeleton Arm, shop and box items such as the Card Lighter, Choir Shell, Reverse Turn Order, Owl Fingers, and the Jumpscare Item, as well as assets used in the gameplay of \"Flashfire\".",
+        short: [
+          "Flypt game board.",
+          "Skeleton arm model and rig.",
+          "Shop and Box Items.",
+          "Flashfire game board",
+        ],
         bio: "My focus is in 3D applications with a specialization in 3D prop creation. I believe that a story can be told with not only audible dialogue, but that strong visuals can enhance and drive a narrative even further. I aspire to keep growing my pool of knowledge to not only better myself as an artist but to be able to share my excitement and passion with others.",
         links: [
           { label: "LinkedIn", url: "https://www.linkedin.com/in/abigail-weeden" },
